@@ -1,0 +1,534 @@
+/*
+@author:	Monica Olsson
+@date:		2014-03-06
+*/
+
+body .ui-panel{
+    padding: 0px;
+}
+
+body .break-line {
+    word-break: break-all;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/*-------------------- Primefaces paginator -----------------------*/
+body .ui-paginator .ui-paginator-page {
+    display: inline;
+}
+
+body .ui-paginator {
+    text-align: center;
+}
+
+body .ui-datalist-content {
+    background: #eef5fa;
+    border: 1px solid #c4ced5;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+body .ui-paginator-pages .ui-paginator-page {
+    color: #2f72a9;
+    background: none;
+    border: 1px solid transparent;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    display: inline;
+    font-family: Ubuntu, Arial, Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.0;
+    padding: 2px 7px;
+    text-align: center;
+    text-decoration: none;
+    width: 20px;
+}
+
+body .ui-paginator-pages .ui-state-active {
+    background-color: white;
+    color: #000;
+    cursor: default;
+}
+
+body .ui-paginator-pages .ui-state-hover {
+    background-color: #e4edf9;
+    border-color: #255d8c;
+
+}
+
+body .ui-paginator span {
+    text-align: center;
+}
+
+body .ui-datatable .ui-paginator {
+    background-color: blue;
+    border: 1px;
+}
+
+body .ui-paginator-last,
+body .ui-paginator-first {
+    background-image: url(/regionportalen2-theme/images/paginator/pager-simple-sprite.png);
+    background-repeat: no-repeat;
+    border: none;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    padding: 2px 30px;
+}
+
+body .ui-paginator .ui-paginator-last,
+body .ui-paginator .ui-paginator-first {
+    padding: 2px 2px;
+
+}
+
+body .ui-paginator-last {
+    background-position: 100% -150px;
+}
+
+body .ui-paginator-first {
+    background-position: 0 -100px;
+}
+
+body .ui-state-disabled,
+body .ui-widget-header .ui-state-disabled {
+    opacity: .35;
+    filter: Alpha(Opacity=35);
+
+}
+
+body .ui-datalist .ui-paginator-bottom {
+    margin-top: 5px;
+
+}
+
+/*---------------Primefaces ui error --------------------------------------*/
+body .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
+    border: 1px solid #F00;
+    color: #333;
+}
+
+body .ui-message-error  {
+    border: 1px;
+    color: #333;
+    font-weight: bold;
+    margin: 2px auto 14px;
+    padding: 6px 6px 6px 30px;
+    text-align: left;
+}
+
+body .ui-messages-error-summary {
+    border: 0px;
+    display: inline;
+    font-weight: bold;
+    margin: 2px auto 14px;
+    padding: 6px 6px 6px 0px;
+    text-align: left;
+}
+
+body .ui-message-info-icon, .ui-message-warn-icon, .ui-message-error-icon, .ui-message-fatal-icon, body .ui-messages-error-icon {
+    background: #FDD url(/regionportalen2-theme/images/messages/error.png) no-repeat -1px 50%;
+
+}
+
+body .ui-messages-error,
+body .ui-message-error {
+    color: #333;
+    font-family: Arial,Verdana,Helvetica,sans-serif;
+    font-size: 12px;
+    background-color: #FDD;
+    border-color: #F00;
+
+}
+
+body .ui-messages .ui-messages-close {
+    float: none;
+    cursor: none;
+
+}
+
+/*----------------Primefaces error icon --------------------------------------*/
+body .ui-icon .ui-icon-alert .ui-confirm-dialog-severity {
+    background: #FDD url(/regionportalen2-theme/images/messages/error.png) no-repeat -1px 50%;
+}
+
+body .no-padding .aui-fieldset-content {
+    padding: 0;
+}
+
+
+/* ----------------- Primefaces User Bookmarks Portlet Monica ----------------------- */
+body .user-bookmarks {
+}
+
+body .user-bookmarks .bookmark-controls-main {
+    margin: 0;
+}
+
+body .user-bookmarks h2 {
+    color: #2f72a9;
+    font-size: 1.3em;
+    margin: 0.6em 0 0.6em 0;
+}
+
+body .bookmark-hd {
+    margin: 15px 0 10px 0;
+    overflow: hidden;
+}
+
+body .bookmark-hd h2 {
+    float: left;
+    margin: 0;
+    position: relative;
+}
+
+body .bookmark-hd .link-button {
+    float: right;
+    margin: 0 0 0 10px;
+    position: static;
+    display: inline-block;
+}
+
+ul.bookmark-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 100001 !important;
+}
+
+ul.bookmark-list li {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin: 5px 0;
+    padding: 0px;
+    list-style: none;
+    margin-left: 10px;
+}
+
+ul.bookmark-list li.bookmark-item-odd {
+
+}
+
+body .bookmark-title-wrap .bookmark-title-wrap {
+}
+
+body .bookmark-title-toggle {
+    background: #ccc;
+    float: left;
+    font-size: 0;
+    height: 18px;
+    text-indent: -9999em;
+    width: 18px;
+}
+
+body .bookmark-item-minimized .bookmark-title-toggle {
+    background: transparent url(/regionportalen2-theme/images/arrows/rp-arrow-right.png) left center no-repeat;
+}
+
+body .bookmark-item-maximized .bookmark-title-toggle {
+    background: transparent url(/regionportalen2-theme/images/arrows/rp-arrow-down.png) left center no-repeat;
+}
+
+body .bookmark-title-wrap a.bookmark-title {
+    display: block;
+    line-height: 18px;
+    margin: 0 40px 0 4px;
+    text-decoration: none;
+}
+
+body .bookmark-title-wrap a.bookmark-title:hover {
+    text-decoration: underline;
+}
+
+body .bookmark-more-info {
+    padding: 5px 10px 5px 16px;
+}
+
+body .bookmark-more-info p {
+    margin: 0.3em 0;
+}
+
+body .bookmark-item-minimized .bookmark-more-info {
+    display: none;
+}
+
+body .bookmark-item-maximized .bookmark-more-info {
+    display: block;
+}
+
+body .bookmark-controls {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+body .bookmark-controls a {
+    background: #ccc;
+    display: block;
+    float: left;
+    height: 16px;
+    font-size: 0;
+    margin: 0 0 0 10px;
+    text-indent: -9999em;
+    width: 16px;
+}
+
+body .bookmark-controls a.bookmark-edit {
+    background: transparent url(/regionportalen2-theme/images/common/edit.png) 0 0 no-repeat;
+}
+
+body .bookmark-controls a.bookmark-delete {
+    background: transparent url(/regionportalen2-theme/images/common/close.png) 0 0 no-repeat !important;
+}
+
+/*------------------ Primefaces link button for confirmDialog ---------------------*/
+body .centered-link-button {
+    background: #c7c6c5;
+    background: #bebdbc url(/regionportalen2-theme/images/buttons/button-bg.png) 0 0 repeat-x;
+    border: 1px solid #a5a4a3;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #444;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 3;
+    margin-right: 10px;
+    padding: 7px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+body .centered-link-button-alt {
+    background: #2865ad url(/regionportalen2-theme/images/buttons/button-bg-normal.png) 0 0 repeat-x;
+    border: 1px solid #2f71a8;
+    border-color: #2f71a8 #052a73 #052a73 #2f71a8;
+    color: #fff !important;
+}
+
+/*------- Primefaces confirmMessage  -------*/
+
+body .ui-panel .ui-panel-content {
+    border: 0;
+    background: none;
+    padding: 0px;
+}
+
+/*------------------ Primefaces dataList ---------------------------*/
+
+body .ui-datalist-content .ui-widget-content {
+    border: 1px;
+}
+
+body .ui-datalist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body .ui-datalist li {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin: 5px 0;
+    padding: 0px;
+    position: relative;
+    list-style: none;
+    margin-left: 10px;
+
+}
+
+/*----------------- Primefaces confirmDialog ---------------------*/
+body .ui-widget-overlay {
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    filter: alpha(opacity=30);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    opacity: 0.5;
+    -moz-opacity: 0.50;
+    zoom: 1;
+}
+
+body .ui-button .ui-button-text {
+    background: #2865ad url(/regionportalen2-theme/images/buttons/button-bg-normal.png) 0 0 repeat-x;
+    border: 1px solid #2f71a8;
+    border-color: #2f71a8 #052a73 #052a73 #2f71a8;
+    color: #fff;
+    padding: 7px 15px;
+    text-shadow: none;
+    text-align: center;
+}
+
+body .ui-widget {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+body .ui-dialog .ui-dialog-buttonpane {
+    text-align: center;
+    border-width: 1px 0 0 0;
+    background-image: none;
+    padding: .3em 1em .5em .4em;
+    background: #eef5fa;
+    border-top: 1px solid #c4ced5;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body .ui-dialog .ui-dialog-content {
+    width: 300px;
+    text-align: center;
+}
+
+body .ui-dialog {
+    width: 300px;
+
+}
+
+body .ui-widget-content {
+    background-color: #FFFFFF;
+}
+
+body .ui-dialog .ui-dialog-titlebar-close, .ui-dialog .ui-dialog-titlebar-minimize, .ui-dialog .ui-dialog-titlebar-maximize {
+    float: right;
+    margin: 0px;
+    top: 0px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+body .ui-dialog-titlebar-close {
+    background: transparent url(/regionportalen2-theme/images/icons/icon-rp-close.png) 0 0 no-repeat;
+    height: 24px;
+    width: 24px;
+    opacity: 0.7;
+}
+
+body .ui-confirm-dialog {
+    width: 300px;
+    max-width:350px;
+}
+
+body .autoWidthDialog {
+    width: auto;
+}
+
+/*-------------------- Primefaces paginator -----------------------*/
+body .ui-paginator .ui-paginator-page {
+    display: inline;
+}
+
+body .ui-paginator {
+    text-align: center;
+}
+
+body .ui-datalist-content {
+    background: #eef5fa;
+    border: 1px solid #c4ced5;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+body .ui-paginator-pages .ui-paginator-page {
+    color: #2f72a9;
+    background: none;
+    border: 1px solid transparent;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    display: inline;
+    font-family: Ubuntu, Arial, Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.0;
+    padding: 2px 7px;
+    text-align: center;
+    text-decoration: none;
+    width: 20px;
+
+}
+
+body .ui-paginator-pages .ui-state-active {
+    background-color: white;
+    color: #000;
+    cursor: default;
+}
+
+body .ui-paginator-pages .ui-state-hover {
+    background-color: #e4edf9;
+    border-color: #255d8c;
+
+}
+
+body .ui-paginator span {
+    text-align: center;
+}
+
+body .ui-datatable .ui-paginator {
+    background-color: blue;
+    border: 1px;
+}
+
+body .ui-paginator-last,
+body .ui-paginator-first {
+    background-image: url(/regionportalen2-theme/images/paginator/pager-simple-sprite.png);
+    background-repeat: no-repeat;
+    border: none;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    padding: 2px 30px;
+}
+
+body .ui-paginator .ui-paginator-last,
+body .ui-paginator .ui-paginator-first {
+    padding: 2px 2px;
+
+}
+
+body .ui-paginator-last {
+    background-position: 100% -150px;
+}
+
+body .ui-paginator-first {
+    background-position: 0 -100px;
+}
+
+body .ui-state-disabled,
+body .ui-widget-header .ui-state-disabled {
+    opacity: .35;
+    filter: Alpha(Opacity=35);
+
+}
+
+body .ui-datalist .ui-paginator-bottom {
+    margin-top: 5px;
+
+}
+/*------- Primefaces no border radius ----------------------*/
+body .no-border-radius {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:portlet="http://java.sun.com/portlet_2_0"  >
+
+    <portlet:defineObjects />
+
+    <h:head></h:head>
+
+    <div class="vgr-boxed-content rp-user-bookmarks" style="max-width: 570px">
+        <div class="hd"> <span>Mina bokm&#228;rken</span></div>
+        <div class="bd">
+
+            <p:panel id="bookmark_panel" style="padding: 0px">
+
+                <p:panel rendered="#{not bookmarkBackingBean.editBookmarkState}">
+                    <ui:include src="bookmark-list.xhtml"/>
+                </p:panel>
+
+                <p:panel rendered="#{bookmarkBackingBean.editBookmarkState}">
+                    <ui:include src="edit-bookmark.xhtml"/>
+                </p:panel>
+            </p:panel>
+            <ui:include src="delete-dialog.xhtml"/>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript"
+            src="#{facesContext.externalContext.requestContextPath}/js/bookmark-portlet.js"></script>
+    <script type="text/javascript">
+
+        AUI().ready('event', 'bookmark-portlet', function (A) {
+
+            var rpBookmarkPortlet = new A.RpBookmarkPortlet({
+                portletNamespace: '<portlet:namespace />',
+                portletNode: '#p_p_id' + '#{facesContext.externalContext.response.namespace}'
+            });
+            rpBookmarkPortlet.render();
+        });
+    </script>
+
+</f:view>

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:portlet="http://java.sun.com/portlet_2_0"
+        xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" >
+
+    <portlet:defineObjects />
+
+
+    <h2 style="font-size: 15px; margin: 0px;">
+        Startsida intra
+    </h2>
+
+    <!--User's default Bookmark link list-->
+    <ul class="bookmark-list">
+        <p:dataList value="#{bookmarkBackingBean.vgrBookmarks}"
+                    var="bookmark"
+                    id="vgrBookmarks"
+                    type="none">
+
+            <li class="bookmark-item bookmark-item-minimized">
+                <div class="bookmark-title-wrap clearfix">
+                    <a class="bookmark-title-toggle" href="#">Toggle </a>
+                    <a class="bookmark-title" href="#{bookmark.url}" target="_BLANK">#{bookmark.title}</a>
+                </div>
+
+                <div class="bookmark-more-info">
+                    <p>#{bookmark.url}</p>
+                    <p>L&#228;nk till intran&#228;t - h&#228;mtad från Katalog i V&#228;st utifrån din
+                        anst&#228;llning.</p>
+                </div>
+            </li>
+        </p:dataList>
+    </ul>
+
+    <!--End of User's default Bookmark link list-->
+    <div class="rp-bookmark-hd clearfix">
+        <h2 style="font-size: 15px; margin: 0px;">
+            Egna bokm&#228;rken
+        </h2>
+
+        <p:commandLink
+                styleClass="rp-link-button rp-link-button-alt"
+                actionListener="#{bookmarkBackingBean.addNewBookmark}"
+                value="L&#228;gg till"
+                ajax="true"
+                async="true"
+                update=":bookmark_panel"/>
+    </div>
+
+    <!--User's custom Bookmark link list-->
+    <h:panelGrid columns="1" cellpadding="0" width="100%">
+        <h:form id="bookmark_form" style="padding: 0px; max-width: 543px">
+
+            <h:panelGroup rendered="#{not empty bookmarkBackingBean.customBookmarks}">
+                <ul class="bookmark-list">
+
+                    <p:dataList value="#{bookmarkBackingBean.customBookmarks}"
+                                var="bookmark"
+                                id="bookmarks"
+                                paginator="true"
+                                paginatorAlwaysVisible="false"
+                                rows="#{bookmarkBackingBean.paginatorRows}"
+                                pageLinks="#{bookmarkBackingBean.paginatorPageLinks}"
+                                paginatorTemplate=" #{bookmarkBackingBean.paginatorFirstPageLink} {PageLinks} #{bookmarkBackingBean.paginatorLastPageLink} "
+                                type="none"
+                                paginatorPosition="bottom"
+                                rowIndexVar="rowIndex">
+
+                        <li class="bookmark-item bookmark-item-minimized">
+
+                            <div><div class="bookmark-title-wrap clearfix">
+
+                                <a class="bookmark-title-toggle" href="#">Toggle </a>
+
+                                <!--Checks if bookmark title is bigger than 36 letters. Adds ellipsis dots if it is.-->
+                                <h:panelGroup rendered="#{fn:length(bookmark.title) ge 22}">
+                                    <a class="bookmark-title" href="#{bookmark.url}" target="_BLANK">#{fn:substring(bookmark.title, 0, 22)}...</a>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{fn:length(bookmark.title) lt 22}">
+                                    <a class="bookmark-title" href="#{bookmark.url}" target="_BLANK">#{bookmark.title}</a>
+                                </h:panelGroup>
+
+                            </div></div>
+
+                            <div class="bookmark-more-info">
+                                <div class="bookmark-controls clearfix">
+
+                                    <!--Edit Bookmark button-->
+                                    <p:commandLink styleClass="bookmark-edit" action="#{bookmarkBackingBean.editBookmark}"
+                                                   title="Redigera" update=":bookmark_panel" value="Redigera" ajax="true" async="true">
+                                        <f:setPropertyActionListener value="#{bookmark.id}"
+                                                                     target="#{bookmarkBackingBean.bookmarkId}"/>
+                                    </p:commandLink>
+
+                                    <!--Delete Bookmark button-->
+                                    <p:commandLink title="Ta bort" value="Ta bort" type="button"
+                                                   styleClass="bookmark-delete" onclick="delete_dialog.show()">
+                                        <f:setPropertyActionListener value="#{bookmark.id}"
+                                                                     target="#{bookmarkBackingBean.bookmarkId}"/>
+                                    </p:commandLink>
+                                </div>
+
+                                <h:panelGroup rendered="#{fn:length(bookmark.title) ge 22}">
+                                     <p class="break-line">#{bookmark.title}</p>
+                                 </h:panelGroup>
+                                        <p class="break-line">#{bookmark.url}</p>
+                                        <p style="word-wrap:break-word;max-width: 500px">#{bookmark.description}</p>
+                            </div>
+                        </li>
+                    </p:dataList>
+
+                </ul>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{empty bookmarkBackingBean.customBookmarks}">
+                <p>Du har inte lagt till n&#229;gra egna bokm&#228;rken &#228;nnu.</p>
+            </h:panelGroup>
+        </h:form>
+    </h:panelGrid>
+    <!--End of User's custom Bookmark link list-->
+
+</f:view>
+
