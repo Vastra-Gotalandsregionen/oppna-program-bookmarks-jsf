@@ -37,4 +37,9 @@
 
   -->
 
+    <scm>
+        <developerConnection>scm:svn:https://oppna-program-bookmarks-jsf.googlecode.com/svn/trunk</developerConnection>
+        <url>http://oppna-program-bookmarks-jsf.googlecode.com/svn/trunk</url>
+    </scm>
+
 </project>
