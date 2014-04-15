@@ -120,9 +120,8 @@ public class BookmarkBackingBean implements Serializable{
         }
 
         //Checks if the user tries to add more bookmarks than allowed.
-        //TODO Change from 26 to 1000 for production. 26 is for test purposes.
-        if(getCustomBookmarks().size() >= 26) {
-            facesErrorMessage("Du får max ha 26 bokmärken. " +
+        if(getCustomBookmarks().size() >= 1000) {
+            facesErrorMessage("Du får max ha 1000 bokmärken. " +
                     "Radera gamla bokmärken för att få plats med nya.");
             return;
         }

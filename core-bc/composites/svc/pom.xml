@@ -7,20 +7,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>se.vgregion.oppna-program-bookmarks</groupId>
-		<artifactId>oppna-program-bookmarks-core-bc</artifactId>
+		<groupId>se.vgregion.oppna-program-bookmarks-jsf</groupId>
+		<artifactId>oppna-program-bookmarks-jsf-core-bc</artifactId>
 		<version>1.0-SNAPSHOT</version>
       <relativePath>../../pom.xml</relativePath>
     </parent>
-	<groupId>se.vgregion.oppna-program-bookmarks</groupId>
-	<artifactId>oppna-program-bookmarks-core-bc-composite-svc</artifactId>
+	<groupId>se.vgregion.oppna-program-bookmarks-jsf</groupId>
+	<artifactId>oppna-program-bookmarks-jsf-core-bc-composite-svc</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>oppna-program-bookmarks-core-bc-composite-types</artifactId>
+			<artifactId>oppna-program-bookmarks-jsf-core-bc-composite-types</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		
