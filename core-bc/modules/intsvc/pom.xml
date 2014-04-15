@@ -16,7 +16,7 @@ Generation time : 2013-05-08 10:10:47 CEST
     <relativePath>../../pom.xml</relativePath>
   </parent>
   <groupId>se.vgregion.oppna-program-bookmarks-jsf</groupId>
-  <artifactId>oppna-program-bookmarks-core-bc-module-intsvc</artifactId>
+  <artifactId>oppna-program-bookmarks-jsf-core-bc-module-intsvc</artifactId>
   <packaging>war</packaging>
   <name>${project.artifactId}</name>
 
