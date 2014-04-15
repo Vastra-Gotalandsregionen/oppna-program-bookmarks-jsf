@@ -29,11 +29,12 @@
     <developerConnection>scm:svn:https://oppna-program-bookmarks.googlecode.com/svn/trunk</developerConnection>
     <url>http://oppna-program-bookmarks-jsf.googlecode.com/svn/trunk</url>
   </scm>
-  -->
-
 
   <scm>
     <developerConnection>scm:svn:https://oppna-program-commons.googlecode.com/svn/corporate-pom/tags/oppna-program-bookmarks-jsf-system-1.0</developerConnection>
     <url>http://oppna-program-commons.googlecode.com/svn/corporate-pom/tags/oppna-program-bookmarks-jsf-system-1.0</url>
   </scm>
+
+  -->
+
 </project>
