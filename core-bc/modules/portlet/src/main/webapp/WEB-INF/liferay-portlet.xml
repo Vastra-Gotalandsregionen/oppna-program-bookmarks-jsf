@@ -10,7 +10,7 @@
         <action-url-redirect>true</action-url-redirect>
         <instanceable>false</instanceable>
         <requires-namespaced-parameters>false</requires-namespaced-parameters>
-        <header-portlet-css>/css/theme.css</header-portlet-css>
+        <css-class-wrapper>user-bookmarks-jsf-portlet</css-class-wrapper>
     </portlet>
 
     <role-mapper>

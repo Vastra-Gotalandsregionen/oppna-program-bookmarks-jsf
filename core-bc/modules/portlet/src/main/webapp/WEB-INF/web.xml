@@ -76,6 +76,7 @@
     </context-param>-->
 
     <!-- To override Primefaces own theme -->
+    <!-- --> 
     <context-param>
         <param-name>primefaces.THEME</param-name>
         <param-value>theme</param-value>
