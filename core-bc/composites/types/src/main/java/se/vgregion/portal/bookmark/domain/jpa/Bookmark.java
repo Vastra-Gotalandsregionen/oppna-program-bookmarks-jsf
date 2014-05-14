@@ -12,6 +12,8 @@ import javax.validation.constraints.Size;
 
 import se.vgregion.dao.domain.patterns.entity.AbstractEntity;
 
+import java.io.Serializable;
+
 /**
  * JPA entity class representing a Bookmark
  * 
@@ -20,7 +22,7 @@ import se.vgregion.dao.domain.patterns.entity.AbstractEntity;
  */
 @Entity
 @Table(name = "vgr_bookmark")
-public class Bookmark extends AbstractEntity<Long> {
+public class Bookmark extends AbstractEntity<Long> implements Serializable {
 
     // Primary Key
 

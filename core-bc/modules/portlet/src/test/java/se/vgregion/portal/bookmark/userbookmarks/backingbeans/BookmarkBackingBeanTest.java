@@ -1,4 +1,4 @@
-package se.vgregion.portal.bookmark.userbookmarks.backingbean;
+package se.vgregion.portal.bookmark.userbookmarks.backingbeans;
 
 import com.liferay.portal.theme.ThemeDisplay;
 import org.junit.Test;

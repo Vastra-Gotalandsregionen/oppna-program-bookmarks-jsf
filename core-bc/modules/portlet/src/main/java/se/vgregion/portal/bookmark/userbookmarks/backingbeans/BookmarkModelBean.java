@@ -1,4 +1,4 @@
-package se.vgregion.portal.bookmark.userbookmarks.backingbean;
+package se.vgregion.portal.bookmark.userbookmarks.backingbeans;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -12,9 +12,9 @@ import java.io.Serializable;
 
 /**
  * @author Monica Olsson 2014-03-06
- * 
+ *
  */
-@Component
+@Component(value = "bookmarkModelBean")
 @Scope("session")
 public class BookmarkModelBean implements Serializable {
     private static final Logger LOGGER = LoggerFactory.getLogger(BookmarkModelBean.class);
@@ -24,21 +24,20 @@ public class BookmarkModelBean implements Serializable {
     private long groupId;
     private long userId;
 
-    @Size(max = 255, message = "Titeln får inte vara längre än 255 tecken.")
+    @Size(max = 255, message = "Titeln får inte vara längre än {max} tecken.")
     private String title;
 
-    @Size(max= 500, message = "URL:en får inte vara längre än 500 tecken.")
+    @Size(max= 500, message = "URL:en får inte vara längre än {max} tecken.")
     @NotBlank(message = "URL-fältet måste vara ifyllt.")
     private String url;
 
-    @Size(max= 1000, message = "Beskrivningen får inte vara längre än 1000 tecken.")
+    @Size(max= 1000, message = "Beskrivningen får inte vara längre än {max} tecken.")
     protected String description;
 
     /**
      * Empty constructor
      */
-    public BookmarkModelBean() {
-    }
+    public BookmarkModelBean() {}
 
     public BookmarkModelBean(long id, String title, String url, String description) {
         this.id = id;

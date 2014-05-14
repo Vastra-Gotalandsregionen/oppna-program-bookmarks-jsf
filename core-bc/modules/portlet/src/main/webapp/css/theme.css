@@ -16,15 +16,15 @@ body .break-line {
 }
 
 /*-------------------- Primefaces paginator -----------------------*/
-body .ui-paginator .ui-paginator-page {
+.vgr-paginator .ui-paginator .ui-paginator-page {
     display: inline;
 }
 
-body .ui-paginator {
+.vgr-paginator .ui-paginator {
     text-align: center;
 }
 
-body .ui-datalist-content {
+.vgr-paginator .ui-datalist-content {
     background: #eef5fa;
     border: 1px solid #c4ced5;
     -moz-border-radius: 3px;
@@ -35,7 +35,7 @@ body .ui-datalist-content {
     margin-bottom: 5px;
 }
 
-body .ui-paginator-pages .ui-paginator-page {
+.vgr-paginator .ui-paginator-pages .ui-paginator-page {
     color: #2f72a9;
     background: none;
     border: 1px solid transparent;
@@ -52,30 +52,30 @@ body .ui-paginator-pages .ui-paginator-page {
     width: 20px;
 }
 
-body .ui-paginator-pages .ui-state-active {
+.vgr-paginator .ui-paginator-pages .ui-state-active {
     background-color: white;
     color: #000;
     cursor: default;
 }
 
-body .ui-paginator-pages .ui-state-hover {
+.vgr-paginator .ui-paginator-pages .ui-state-hover {
     background-color: #e4edf9;
     border-color: #255d8c;
 
 }
 
-body .ui-paginator span {
+.vgr-paginator .ui-paginator span {
     text-align: center;
 }
 
-body .ui-datatable .ui-paginator {
+.vgr-paginator .ui-datatable .ui-paginator {
     background-color: blue;
     border: 1px;
 }
 
-body .ui-paginator-last,
-body .ui-paginator-first {
-    background-image: url(/regionportalen2-theme/images/paginator/pager-simple-sprite.png);
+.vgr-paginator .ui-paginator-last,
+.vgr-paginator .ui-paginator-first {
+    background-image: url(/rp-bootstrap-theme/images/paginator/pager-simple-sprite.png);
     background-repeat: no-repeat;
     border: none;
     height: 20px;
@@ -84,39 +84,39 @@ body .ui-paginator-first {
     padding: 2px 30px;
 }
 
-body .ui-paginator .ui-paginator-last,
-body .ui-paginator .ui-paginator-first {
+.vgr-paginator .ui-paginator .ui-paginator-last,
+.vgr-paginator .ui-paginator .ui-paginator-first {
     padding: 2px 2px;
 
 }
 
-body .ui-paginator-last {
+.vgr-paginator .ui-paginator-last {
     background-position: 100% -150px;
 }
 
-body .ui-paginator-first {
+.vgr-paginator .ui-paginator-first {
     background-position: 0 -100px;
 }
 
-body .ui-state-disabled,
-body .ui-widget-header .ui-state-disabled {
+.vgr-paginator .ui-state-disabled,
+.vgr-paginator .ui-widget-header .ui-state-disabled {
     opacity: .35;
     filter: Alpha(Opacity=35);
 
 }
 
-body .ui-datalist .ui-paginator-bottom {
+.vgr-paginator .ui-datalist .ui-paginator-bottom {
     margin-top: 5px;
 
 }
 
 /*---------------Primefaces ui error --------------------------------------*/
-body .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
+.vgr-error-msg .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
     border: 1px solid #F00;
     color: #333;
 }
 
-body .ui-message-error  {
+.vgr-error-msg .ui-message-error  {
     border: 1px;
     color: #333;
     font-weight: bold;
@@ -125,7 +125,7 @@ body .ui-message-error  {
     text-align: left;
 }
 
-body .ui-messages-error-summary {
+.vgr-error-msg .ui-messages-error-summary {
     border: 0px;
     display: inline;
     font-weight: bold;
@@ -134,94 +134,67 @@ body .ui-messages-error-summary {
     text-align: left;
 }
 
-body .ui-message-info-icon, .ui-message-warn-icon, .ui-message-error-icon, .ui-message-fatal-icon, body .ui-messages-error-icon {
-    background: #FDD url(/regionportalen2-theme/images/messages/error.png) no-repeat -1px 50%;
-
+.vgr-error-msg .ui-message-info-icon, .ui-message-warn-icon, .ui-message-error-icon, .ui-message-fatal-icon, body .ui-messages-error-icon {
+    background: #FDD url(/rp-bootstrap-theme/images/messages/error.png) no-repeat -1px 50%;
 }
 
-body .ui-messages-error,
-body .ui-message-error {
+.vgr-error-msg .ui-messages-error,
+.vgr-error-msg .ui-message-error {
     color: #333;
     font-family: Arial,Verdana,Helvetica,sans-serif;
     font-size: 12px;
     background-color: #FDD;
     border-color: #F00;
-
 }
 
-body .ui-messages .ui-messages-close {
+.vgr-error-msg .ui-messages .ui-messages-close {
     float: none;
     cursor: none;
-
 }
 
-/*----------------Primefaces error icon --------------------------------------*/
-body .ui-icon .ui-icon-alert .ui-confirm-dialog-severity {
-    background: #FDD url(/regionportalen2-theme/images/messages/error.png) no-repeat -1px 50%;
+.vgr-error-msg .ui-icon .ui-icon-alert .ui-confirm-dialog-severity {
+    background: #FDD url(/rp-bootstrap-theme/images/messages/error.png) no-repeat -1px 50%;
 }
 
-body .no-padding .aui-fieldset-content {
+.vgr-error-msg .no-padding .aui-fieldset-content {
     padding: 0;
 }
 
 
 /* ----------------- Primefaces User Bookmarks Portlet Monica ----------------------- */
-body .user-bookmarks {
+.user-bookmarks {
 }
 
-body .user-bookmarks .bookmark-controls-main {
+.user-bookmarks .bookmark-controls-main {
     margin: 0;
 }
 
-body .user-bookmarks h2 {
+.user-bookmarks h2 {
     color: #2f72a9;
     font-size: 1.3em;
     margin: 0.6em 0 0.6em 0;
 }
 
-body .bookmark-hd {
+.bookmark-hd {
     margin: 15px 0 10px 0;
     overflow: hidden;
 }
 
-body .bookmark-hd h2 {
+.bookmark-hd h2 {
     float: left;
     margin: 0;
     position: relative;
 }
 
-body .bookmark-hd .link-button {
+.bookmark-hd .link-button {
     float: right;
     margin: 0 0 0 10px;
     position: static;
     display: inline-block;
 }
 
-ul.bookmark-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    z-index: 100001 !important;
-}
 
-ul.bookmark-list li {
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    margin: 5px 0;
-    padding: 0px;
-    list-style: none;
-    margin-left: 10px;
-}
-
-ul.bookmark-list li.bookmark-item-odd {
-
-}
-
-body .bookmark-title-wrap .bookmark-title-wrap {
-}
-
-body .bookmark-title-toggle {
+.bookmark-title-toggle {
     background: #ccc;
     float: left;
     font-size: 0;
@@ -230,48 +203,60 @@ body .bookmark-title-toggle {
     width: 18px;
 }
 
-body .bookmark-item-minimized .bookmark-title-toggle {
-    background: transparent url(/regionportalen2-theme/images/arrows/rp-arrow-right.png) left center no-repeat;
+.bookmark-item-minimized .bookmark-title-toggle {
+    background: transparent url(/rp-bootstrap-theme/images/arrows/rp-arrow-right.png) left center no-repeat;
 }
 
-body .bookmark-item-maximized .bookmark-title-toggle {
-    background: transparent url(/regionportalen2-theme/images/arrows/rp-arrow-down.png) left center no-repeat;
+.bookmark-item-maximized .bookmark-title-toggle {
+    background: transparent url(/rp-bootstrap-theme/images/arrows/rp-arrow-down.png) left center no-repeat;
 }
 
-body .bookmark-title-wrap a.bookmark-title {
+.bookmark-title-wrap a.bookmark-title {
     display: block;
     line-height: 18px;
     margin: 0 40px 0 4px;
     text-decoration: none;
 }
 
-body .bookmark-title-wrap a.bookmark-title:hover {
+
+.bookmark-ellipsis {
+    text-decoration: none !important;
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    position: absolute;
+}
+
+.bookmark-title-wrap a.bookmark-title:hover {
     text-decoration: underline;
 }
 
-body .bookmark-more-info {
+.bookmark-more-info {
     padding: 5px 10px 5px 16px;
 }
 
-body .bookmark-more-info p {
+.bookmark-more-info p {
     margin: 0.3em 0;
 }
 
-body .bookmark-item-minimized .bookmark-more-info {
+.bookmark-item-minimized .bookmark-more-info {
     display: none;
 }
 
-body .bookmark-item-maximized .bookmark-more-info {
+.bookmark-item-maximized .bookmark-more-info {
     display: block;
 }
 
-body .bookmark-controls {
+.bookmark-controls {
     position: absolute;
     top: 0px;
     right: 10px;
 }
 
-body .bookmark-controls a {
+.bookmark-controls a {
     background: #ccc;
     display: block;
     float: left;
@@ -282,23 +267,24 @@ body .bookmark-controls a {
     width: 16px;
 }
 
-body .bookmark-controls a.bookmark-edit {
-    background: transparent url(/regionportalen2-theme/images/common/edit.png) 0 0 no-repeat;
+.bookmark-controls a.bookmark-edit {
+    background: transparent url(/rp-bootstrap-theme/images/common/edit.png) 0 0 no-repeat;
 }
 
-body .bookmark-controls a.bookmark-delete {
-    background: transparent url(/regionportalen2-theme/images/common/close.png) 0 0 no-repeat !important;
+.bookmark-controls a.bookmark-delete {
+    background: transparent url(/rp-bootstrap-theme/images/common/close.png) 0 0 no-repeat !important;
 }
 
-/*------------------ Primefaces link button for confirmDialog ---------------------*/
-body .centered-link-button {
+/*------------------ Primefaces link button for ConfirmDialog ---------------------*/
+.confirm-dialog-button {
     background: #c7c6c5;
-    background: #bebdbc url(/regionportalen2-theme/images/buttons/button-bg.png) 0 0 repeat-x;
-    border: 1px solid #a5a4a3;
+    background: #2865ad url(/rp-bootstrap-theme/images/buttons/button-bg-normal.png) 0 0 repeat-x;
+    border: 1px solid #2f71a8;
+    border-color: #2f71a8 #052a73 #052a73 #2f71a8;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    color: #444;
+    color: #fff !important;
     font-size: 13px;
     font-weight: normal;
     line-height: 3;
@@ -306,47 +292,24 @@ body .centered-link-button {
     padding: 7px 20px;
     position: relative;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none !important;
     text-shadow: none;
 }
 
-body .centered-link-button-alt {
-    background: #2865ad url(/regionportalen2-theme/images/buttons/button-bg-normal.png) 0 0 repeat-x;
-    border: 1px solid #2f71a8;
-    border-color: #2f71a8 #052a73 #052a73 #2f71a8;
-    color: #fff !important;
+.right{
+    float: right;
+    margin-right: 0px;
+    /*Added for IE/*/
+    position: relative;
+
 }
 
-/*------- Primefaces confirmMessage  -------*/
 
+/*------- Primefaces confirmMessage  -------*/
 body .ui-panel .ui-panel-content {
     border: 0;
     background: none;
     padding: 0px;
-}
-
-/*------------------ Primefaces dataList ---------------------------*/
-
-body .ui-datalist-content .ui-widget-content {
-    border: 1px;
-}
-
-body .ui-datalist {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-body .ui-datalist li {
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    margin: 5px 0;
-    padding: 0px;
-    position: relative;
-    list-style: none;
-    margin-left: 10px;
-
 }
 
 /*----------------- Primefaces confirmDialog ---------------------*/
@@ -363,16 +326,6 @@ body .ui-widget-overlay {
     opacity: 0.5;
     -moz-opacity: 0.50;
     zoom: 1;
-}
-
-body .ui-button .ui-button-text {
-    background: #2865ad url(/regionportalen2-theme/images/buttons/button-bg-normal.png) 0 0 repeat-x;
-    border: 1px solid #2f71a8;
-    border-color: #2f71a8 #052a73 #052a73 #2f71a8;
-    color: #fff;
-    padding: 7px 15px;
-    text-shadow: none;
-    text-align: center;
 }
 
 body .ui-widget {
@@ -416,7 +369,7 @@ body .ui-dialog .ui-dialog-titlebar-close, .ui-dialog .ui-dialog-titlebar-minimi
 }
 
 body .ui-dialog-titlebar-close {
-    background: transparent url(/regionportalen2-theme/images/icons/icon-rp-close.png) 0 0 no-repeat;
+    background: transparent url(/rp-bootstrap-theme/images/icons/icon-rp-close.png) 0 0 no-repeat;
     height: 24px;
     width: 24px;
     opacity: 0.7;
@@ -431,16 +384,9 @@ body .autoWidthDialog {
     width: auto;
 }
 
-/*-------------------- Primefaces paginator -----------------------*/
-body .ui-paginator .ui-paginator-page {
-    display: inline;
-}
+/*-------------------- Primefaces list -----------------------*/
 
-body .ui-paginator {
-    text-align: center;
-}
-
-body .ui-datalist-content {
+.bookmark-list .ui-datalist-content {
     background: #eef5fa;
     border: 1px solid #c4ced5;
     -moz-border-radius: 3px;
@@ -451,84 +397,76 @@ body .ui-datalist-content {
     margin-bottom: 5px;
 }
 
-body .ui-paginator-pages .ui-paginator-page {
-    color: #2f72a9;
-    background: none;
-    border: 1px solid transparent;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    display: inline;
-    font-family: Ubuntu, Arial, Verdana, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 1.0;
-    padding: 2px 7px;
-    text-align: center;
-    text-decoration: none;
-    width: 20px;
-
-}
-
-body .ui-paginator-pages .ui-state-active {
-    background-color: white;
-    color: #000;
-    cursor: default;
-}
-
-body .ui-paginator-pages .ui-state-hover {
-    background-color: #e4edf9;
-    border-color: #255d8c;
-
-}
-
-body .ui-paginator span {
-    text-align: center;
-}
-
-body .ui-datatable .ui-paginator {
-    background-color: blue;
-    border: 1px;
-}
-
-body .ui-paginator-last,
-body .ui-paginator-first {
-    background-image: url(/regionportalen2-theme/images/paginator/pager-simple-sprite.png);
-    background-repeat: no-repeat;
-    border: none;
-    height: 20px;
-    width: 20px;
-    line-height: 20px;
-    padding: 2px 30px;
-}
-
-body .ui-paginator .ui-paginator-last,
-body .ui-paginator .ui-paginator-first {
-    padding: 2px 2px;
-
-}
-
-body .ui-paginator-last {
-    background-position: 100% -150px;
-}
-
-body .ui-paginator-first {
-    background-position: 0 -100px;
-}
-
-body .ui-state-disabled,
-body .ui-widget-header .ui-state-disabled {
+.bookmark-list .ui-state-disabled,
+.bookmark-list .ui-widget-header .ui-state-disabled {
     opacity: .35;
     filter: Alpha(Opacity=35);
 
 }
 
-body .ui-datalist .ui-paginator-bottom {
+.bookmark-list .ui-datalist .ui-paginator-bottom {
     margin-top: 5px;
 
 }
+
+.bookmark-list .ui-datalist-content .ui-widget-content {
+    border: 1px;
+}
+
+.bookmark-list .ui-datalist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bookmark-list .ui-datalist li {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin: 5px 0;
+    padding: 0px;
+    position: relative;
+    list-style: none;
+    margin-left: 10px;
+
+}
+
+ul.bookmark-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 100001 !important;
+}
+
+ul.bookmark-list li {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin: 5px 0;
+    padding: 0px;
+    list-style: none;
+    margin-left: 10px;
+}
+
+
 /*------- Primefaces no border radius ----------------------*/
 body .no-border-radius {
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
+}
+
+
+/*input field*/
+
+.bookmark-text-fields  {
+
+    width: 100% !important;
+    margin-left: 0px !important;
+    font-size: 14px !important;
+    color: #333 !important;
+}
+
+.input-text-padding {
+    padding-right: 15px;
 }

@@ -4,7 +4,6 @@
               xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
     <application>
         <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
-       <!-- <message-bundle>CustomMessage</message-bundle>-->
     </application>
 
     <navigation-rule>
@@ -14,15 +13,5 @@
             <to-view-id>/WEB-INF/xhtmls/view.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-
-    <managed-bean>
-        <managed-bean-name>bookmarkBackingBean</managed-bean-name>
-        <managed-bean-class>se.vgregion.portal.bookmark.userbookmarks.backingbean.BookmarkBackingBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-        <managed-property>
-            <property-name>bookmarkModelBean</property-name>
-            <value>#{bookmarkModelBean}</value>
-        </managed-property>
-    </managed-bean>
 
 </faces-config>

@@ -20,14 +20,15 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation= "http://www.springframework.org/schema/beans
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans.xsd
           http://www.springframework.org/schema/context
-          http://www.springframework.org/schema/context/spring-context.xsd"
+          http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd"
        xmlns:b="http://www.springframework.org/schema/beans">
-
-    <context:component-scan base-package="se.vgregion.portal.bookmark.userbookmarks.backingbean"/>
+    <context:annotation-config />
+    <context:component-scan base-package="se.vgregion.portal.bookmark.userbookmarks.backingbeans"/>
+    <mvc:annotation-driven/>
 
     <bean id="propertyPlaceholderConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -37,9 +38,8 @@
             </list>
         </property>
         <property name="ignoreResourceNotFound" value="false"/>
-    </bean>
 
+    </bean>
     <import resource="classpath*:jpa-connector.xml"/>
     <import resource="classpath*:/service-context.xml"/>
-
 </beans>

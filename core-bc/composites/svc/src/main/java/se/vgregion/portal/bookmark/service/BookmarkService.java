@@ -1,5 +1,6 @@
 package se.vgregion.portal.bookmark.service;
 
+import java.io.Serializable;
 import java.util.List;
 
 import se.vgregion.portal.bookmark.domain.jpa.Bookmark;

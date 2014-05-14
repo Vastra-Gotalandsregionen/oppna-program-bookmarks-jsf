@@ -1,58 +1,51 @@
 <?xml version="1.0"?>
 
-<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
-        xmlns:h="http://java.sun.com/jsf/html" xmlns:aui="http://liferay.com/faces/aui"
-        xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:aui="http://liferay.com/faces/aui"
+                xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
 
+    <h:form  id="add_bookmark">
+        <div class="vgr-error-msg "><p:messages  id="messages" autoUpdate="true" closable="true" /></div>
 
+        <br></br>
 
-    <div class="vgr-boxed-content rp-user-bookmarks">
+        <div class="input-text-padding">
+            <h:outputLabel id="title-tooltip"  value="Titel ">
+                <img  alt="" onmouseover="Liferay.Portal.ToolTip.show(this, 'Skriv in en titel för ditt bokmärke. Max 255 tecken.');"
+                      src="/rp-bootstrap-theme/images/portlet/help.png"/>
+            </h:outputLabel>
 
-        <p:messages id="messages" autoUpdate="true" closable="true" />
+            <p:inputText styleClass="bookmark-text-fields" id="title" name="title"
+                         value="#{bookmarkModelBean.title}"  maxlength="255">
+            </p:inputText>
 
-        <p:commandLink immediate="true" style="margin-right:0px;" styleClass="rp-link-button rp-link-button-alt"
-                       actionListener="#{bookmarkBackingBean.editBookmarkStateFalse}" value="Tillbaka till visa bokm&#228;rken"
-                       ajax="true" async="true" update="bookmark_panel"/><br></br><br></br>
+            <h:outputLabel  value="URL * ">
+                <img alt=""
+                     onmouseover="Liferay.Portal.ToolTip.show(this, 'Skriv in URL:en till ditt bokmärke. Max 500 tecken.');"
+                     src="/rp-bootstrap-theme/images/portlet/help.png"/>
+            </h:outputLabel>
+            <p:inputText styleClass="bookmark-text-fields" id="url" value="#{bookmarkModelBean.url}" maxlength="500"></p:inputText>
 
-        <h:form styleClass="edit-bookmark-form clearfix" id="add_bookmark">
+            <h:outputLabel  value="Beskrivning ">
+                <img alt=""
+                     onmouseover="Liferay.Portal.ToolTip.show(this, 'Skriv en beskrivning till ditt bokmärke. Max 1000 tecken.');"
+                     src="/rp-bootstrap-theme/images/portlet/help.png"/>
+            </h:outputLabel>
+            <p:inputTextarea autoResize="false" rows="5" styleClass="bookmark-text-fields" value="#{bookmarkModelBean.description}" maxlength="1000"/>
+        </div>
 
-            <aui:fieldset cssClass="no-padding" column="true">
+        <!-- BEGIN: Save or Cancel buttons-->
+        <aui:button-row >
+            <div class="right">
+                <p:commandLink immediate="true"  styleClass="rp-link-button rp-link-button-alt" actionListener="#{bookmarkBackingBean.editBookmarkStateFalse}"
+                               value="Avbryt" ajax="true" async="true" update=":bookmark_panel" title="Avbryt och gå tillbaka till bokmärkeslistan"/>
 
-                <aui:field>
-                    <h:outputLabel styleClass="aui-field-label" value="Titel ">
-                        <img alt=""
-                             onmouseover="Liferay.Portal.ToolTip.show(this, 'Skriv in en titel för ditt bokmärke. Max 255 tecken.');"
-                             src="/regionportalen2-theme/images/portlet/help.png"/>
-                    </h:outputLabel>
-                    <p:inputText styleClass="no-border-radius" id="title" name="title"
-                                 value="#{bookmarkModelBean.title}" size="900" maxlength="255">
-                    </p:inputText>
-                </aui:field>
+                <p:commandLink style="margin-right: 0px" styleClass="rp-link-button rp-link-button-alt" value="Spara" update=":bookmark_panel"
+                               actionListener="#{bookmarkBackingBean.checkIfUrlExists}" ajax="true" async="true" title="Spara bokmärket och gå tillbaka till bokmärkeslistan"/>
+            </div>
+        </aui:button-row>
+        <!-- END: Save or Cancel buttons-->
 
-                <aui:field>
-                    <h:outputLabel styleClass="aui-field-label" value="URL *">
-                        <img alt=""
-                             onmouseover="Liferay.Portal.ToolTip.show(this, 'Skriv in URL:en till ditt bokmärke. Max 500 tecken.');"
-                             src="/regionportalen2-theme/images/portlet/help.png"/>
-                    </h:outputLabel>
-                    <p:inputText styleClass="no-border-radius" id="url" value="#{bookmarkModelBean.url}" maxlength="500"></p:inputText>
-                </aui:field>
+    </h:form>
 
-                <aui:field>
-                    <h:outputLabel styleClass="aui-field-label" value="Beskrivning ">
-                        <img alt=""
-                             onmouseover="Liferay.Portal.ToolTip.show(this, 'Skriv en beskrivning till ditt bokmärke. Max 1000 tecken.');"
-                             src="/regionportalen2-theme/images/portlet/help.png"/>
-                    </h:outputLabel>
-                   <p:inputTextarea autoResize="false"  styleClass="no-border-radius" value="#{bookmarkModelBean.description}" maxlength="1000"/>
-                </aui:field>
-            </aui:fieldset>
-            <aui:button-row>
-                <p:commandLink styleClass="rp-link-button rp-link-button-alt" value="Spara bokmärke"
-                               update=":bookmark_panel" actionListener="#{bookmarkBackingBean.checkIfUrlExists}" ajax="true" async="true"/>
-            </aui:button-row>
-        </h:form>
-
-    </div>
-
-</f:view>
+</ui:composition>

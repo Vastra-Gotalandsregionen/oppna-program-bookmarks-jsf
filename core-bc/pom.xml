@@ -24,6 +24,6 @@ Generation time : 2013-05-08 10:10:47 CEST
     <module>composites/svc</module>
     <module>composites/schema</module>
     <module>modules/portlet</module>
-    <module>modules/intsvc</module>
+
   </modules>
 </project>

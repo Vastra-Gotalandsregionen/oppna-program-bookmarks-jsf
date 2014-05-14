@@ -52,7 +52,7 @@ Generation time : 2013-05-08 10:10:47 CEST
           <artifactId>hibernate-validator</artifactId>
           <version>5.1.0.Final</version>
       </dependency>
-      <dependency>
+    <!--  <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-api</artifactId>
           <version>1.7.6</version>
@@ -61,7 +61,7 @@ Generation time : 2013-05-08 10:10:47 CEST
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-simple</artifactId>
           <version>1.7.6</version>
-      </dependency>
+      </dependency>-->
       <!-- End: Added for serverside validation-->
 
 

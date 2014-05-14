@@ -1,5 +1,6 @@
 package se.vgregion.portal.bookmark.service;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ import se.vgregion.portal.bookmark.repository.BookmarkRepository;
  * @author Erik Andersson
  * @company Monator Technologies AB
  */
-public class BookmarkServiceImpl implements BookmarkService {
+public class BookmarkServiceImpl implements BookmarkService, Serializable {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(BookmarkServiceImpl.class.getName());
     private BookmarkRepository bookmarkRepository;

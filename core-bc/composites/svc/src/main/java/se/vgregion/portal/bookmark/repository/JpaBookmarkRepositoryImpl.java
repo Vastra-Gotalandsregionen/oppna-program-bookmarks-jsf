@@ -1,5 +1,6 @@
 package se.vgregion.portal.bookmark.repository;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Query;
@@ -14,7 +15,7 @@ import se.vgregion.portal.bookmark.domain.jpa.Bookmark;
  * @company Monator Technologies AB
  */
 public class JpaBookmarkRepositoryImpl extends DefaultJpaRepository<Bookmark, Long>
-        implements JpaBookmarkRepository {
+        implements JpaBookmarkRepository, Serializable {
 	
     @Override
     public int findBookmarksCountByCompanyId(long companyId) {

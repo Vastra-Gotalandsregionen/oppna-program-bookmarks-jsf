@@ -1,4 +1,4 @@
-package se.vgregion.portal.bookmark.userbookmarks.backingbean;
+package se.vgregion.portal.bookmark.userbookmarks.backingbeans;
 
 import org.junit.Before;
 import org.junit.Test;

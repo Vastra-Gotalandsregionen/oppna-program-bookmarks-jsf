@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 
-<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
-        xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
 
     <p:confirmDialog appendToBody="true"
                      closable="true"
@@ -11,12 +12,15 @@
                      severity="alert"
                      widgetVar="delete_dialog">
         <h:form>
-            <p:commandLink styleClass="centered-link-button centered-link-button-alt" ajax="true" async="true" value="Avbryt" onclick="delete_dialog.hide();" type="button"/>
+            <div class="confirm-dialog-buttons">
+            <p:commandLink styleClass="confirm-dialog-button" ajax="true" async="true" value="Avbryt" onclick="delete_dialog.hide();" type="button"/>
 
-            <p:commandLink styleClass="centered-link-button centered-link-button-alt" value="Ja" ajax="true" async="true" actionListener="#{bookmarkBackingBean.deleteBookmark}"
+            <p:commandLink styleClass="confirm-dialog-button" value="Ja" ajax="true" async="true" actionListener="#{bookmarkBackingBean.deleteBookmark()}"
                            oncomplete="delete_dialog.hide();" update=":bookmark_panel">
             </p:commandLink>
+            </div>
         </h:form>
 
     </p:confirmDialog>
-</f:view>
+
+</ui:composition>

@@ -1,4 +1,4 @@
-package se.vgregion.portal.bookmark.userbookmarks.backingbean;
+package se.vgregion.portal.bookmark.userbookmarks.backingbeans;
 
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.theme.ThemeDisplay;
@@ -23,9 +23,10 @@ import java.util.List;
 /**
  * @author Monica Olsson 2014-03-06
  */
-@Component
+@Component(value = "bookmarkBackingBean")
 @Scope("session")
-public class BookmarkBackingBean implements Serializable{
+public class BookmarkBackingBean implements Serializable {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(BookmarkBackingBean.class);
     private List<Bookmark> vgrBookmarks;
     private List<Bookmark> customBookmarks;
@@ -79,7 +80,11 @@ public class BookmarkBackingBean implements Serializable{
      */
     public List<Bookmark> getVgrBookmarks() {
         getThemeDisplayIds();
-        vgrBookmarks = bookmarkService.findVgrBookmarksForUser(companyId, userId);
+        try {
+            vgrBookmarks = bookmarkService.findVgrBookmarksForUser(companyId, userId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return vgrBookmarks;
     }
