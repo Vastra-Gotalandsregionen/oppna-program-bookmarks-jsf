@@ -9,45 +9,48 @@
 
     <portlet:defineObjects />
 
-    <h2 style="font-size: 15px; margin: 0px;">
-        Startsida intra
-    </h2>
-
-    <!-- BEGIN: VGR's default Bookmark link list-->
-    <ul class="bookmark-list">
-        <p:dataList value="#{bookmarkBackingBean.vgrBookmarks}"
-                    var="bookmark"
-                    id="vgrBookmarks"
-                    type="none">
-
-            <li class="bookmark-item bookmark-item-minimized">
-                <div class="bookmark-title-wrap clearfix">
-                    <a class="bookmark-title-toggle" href="#">Toggle </a>
-                    <a class="bookmark-title" href="#{bookmark.url}" target="_BLANK">#{bookmark.title}</a>
-                </div>
-
-                <div class="bookmark-more-info">
-                    <p>#{bookmark.url}</p>
-                    <p>L&#228;nk till intran&#228;t - h&#228;mtad från Katalog i V&#228;st utifrån din
-                        anst&#228;llning.</p>
-                </div>
-            </li>
-        </p:dataList>
-    </ul>
-    <!-- END: of VGR's default Bookmark link list-->
-
-    <div class="rp-bookmark-hd clearfix">
+    <div class="default-bookmarks-wrap">
         <h2 style="font-size: 15px; margin: 0px;">
-            Egna bokm&#228;rken
+            Startsida intra
         </h2>
 
-        <p:commandLink
-                styleClass="rp-link-button rp-link-button-alt"
-                actionListener="#{bookmarkBackingBean.addNewBookmark()}"
-                value="L&#228;gg till"
-                ajax="true"
-                async="true"
-                update=":bookmark_panel"/>
+        <!-- BEGIN: VGR's default Bookmark link list-->
+        <ul class="bookmark-list">
+            <p:dataList value="#{bookmarkBackingBean.vgrBookmarks}"
+                        var="bookmark"
+                        id="vgrBookmarks"
+                        type="none">
+
+                <li class="bookmark-item bookmark-item-minimized">
+                    <div class="bookmark-title-wrap clearfix">
+                        <a class="bookmark-title-toggle" href="#">Toggle </a>
+                        <a class="bookmark-title" href="#{bookmark.url}" target="_BLANK">#{bookmark.title}</a>
+                    </div>
+
+                    <div class="bookmark-more-info">
+                        <p>#{bookmark.url}</p>
+                        <p>L&#228;nk till intran&#228;t - h&#228;mtad från Katalog i V&#228;st utifrån din
+                            anst&#228;llning.</p>
+                    </div>
+                </li>
+            </p:dataList>
+        </ul>
+    </div>
+    <!-- END: of VGR's default Bookmark link list-->
+    <div class="user-bookmarks-wrap">
+        <div class="rp-bookmark-hd clearfix">
+            <h2 style="font-size: 15px; margin: 0px;">
+                Egna bokm&#228;rken
+            </h2>
+
+            <p:commandLink
+                    styleClass="rp-link-button rp-link-button-alt"
+                    actionListener="#{bookmarkBackingBean.addNewBookmark()}"
+                    value="L&#228;gg till"
+                    ajax="true"
+                    async="true"
+                    update=":bookmark_panel"/>
+        </div>
     </div>
 
     <!-- BEGIN: User's custom Bookmark link list-->
