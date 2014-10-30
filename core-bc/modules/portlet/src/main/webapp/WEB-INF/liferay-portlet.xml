@@ -13,6 +13,14 @@
         <css-class-wrapper>user-bookmarks-jsf-portlet</css-class-wrapper>
     </portlet>
 
+    <portlet>
+        <portlet-name>intrabookmarks</portlet-name>
+        <action-url-redirect>true</action-url-redirect>
+        <instanceable>false</instanceable>
+        <requires-namespaced-parameters>false</requires-namespaced-parameters>
+        <css-class-wrapper>intra-bookmarks-portlet</css-class-wrapper>
+    </portlet>
+
     <role-mapper>
         <role-name>administrator</role-name>
         <role-link>Administrator</role-link>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:aui="http://liferay.com/faces/aui"
+                xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:form  id="add_bookmark">
+        <div class="vgr-error-msg "><p:messages  id="messages" autoUpdate="true" closable="true" /></div>
+
+        <br></br>
+
+        <div class="input-text-padding">
+            <h:outputLabel id="title-tooltip"  value="Titel ">
+            </h:outputLabel>
+
+            <p:inputText styleClass="bookmark-text-fields" id="title" name="title"
+                         value="#{bookmarkModelBean.title}"  maxlength="255">
+            </p:inputText>
+
+            <h:outputLabel  value="URL * ">
+            </h:outputLabel>
+            <p:inputText styleClass="bookmark-text-fields" id="url" value="#{bookmarkModelBean.url}" maxlength="500"></p:inputText>
+
+            <h:outputLabel  value="Beskrivning ">
+            </h:outputLabel>
+            <p:inputTextarea autoResize="false" rows="5" styleClass="bookmark-text-fields" value="#{bookmarkModelBean.description}" maxlength="1000"/>
+        </div>
+
+        <!-- BEGIN: Save or Cancel buttons-->
+        <aui:button-row >
+            <div class="right">
+                <p:commandLink immediate="true"  styleClass="rp-link-button rp-link-button-alt" actionListener="#{bookmarkBackingBean.editBookmarkStateFalse}"
+                               value="Avbryt" ajax="true" async="true" update=":bookmark_panel" title="Avbryt och gå tillbaka till bokmärkeslistan"/>
+
+                <p:commandLink style="margin-right: 0px" styleClass="rp-link-button rp-link-button-alt" value="Spara" update=":bookmark_panel"
+                               actionListener="#{bookmarkBackingBean.checkIfUrlExists}" ajax="true" async="true" title="Spara bokmärket och gå tillbaka till bokmärkeslistan"/>
+            </div>
+        </aui:button-row>
+        <!-- END: Save or Cancel buttons-->
+
+    </h:form>
+
+</ui:composition>

@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:portlet="http://java.sun.com/portlet_2_0"
+                xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+                xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <portlet:defineObjects />
+
+    <h:form  id="view_bookmarks">
+
+        <div class="default-bookmarks-wrap">
+            <h2 style="font-size: 15px; margin: 0px;">
+                Startsida intra
+            </h2>
+
+            <!-- BEGIN: VGR's default Bookmark link list-->
+            <ul class="bookmark-list">
+                <p:dataList value="#{bookmarkBackingBean.vgrBookmarks}"
+                            var="bookmark"
+                            id="vgrBookmarks"
+                            type="none">
+
+                    <li class="bookmark-item bookmark-item-minimized">
+                        <div class="bookmark-title-wrap clearfix">
+                            <a class="bookmark-title-toggle" href="#">Toggle </a>
+                            <a class="bookmark-title" href="#{bookmark.url}" target="_BLANK">#{bookmark.title}</a>
+                        </div>
+
+                        <div class="bookmark-more-info">
+                            <p>#{bookmark.url}</p>
+                            <p>L&#228;nk till intran&#228;t - h&#228;mtad från Katalog i V&#228;st utifrån din
+                                anst&#228;llning.</p>
+                        </div>
+                    </li>
+                </p:dataList>
+            </ul>
+        </div>
+        <!-- END: of VGR's default Bookmark link list-->
+        <div class="user-bookmarks-wrap">
+            <div class="rp-bookmark-hd clearfix">
+                <h2 style="font-size: 15px; margin: 0px;">
+                    Egna bokm&#228;rken
+                </h2>
+
+                <h:commandLink styleClass="rp-link-button rp-link-button-alt" action="#{bookmarkBackingBean.addNewBookmark}">
+                    <f:ajax render=":bookmark_panel" />L&#228;gg till
+                </h:commandLink>
+
+            </div>
+        
+
+        <!-- BEGIN: User's custom Bookmark link list-->
+        <div class="vgr-paginator">
+            <h:panelGrid columns="1" cellpadding="0" width="100%">
+
+                    <h:panelGroup rendered="#{not empty bookmarkBackingBean.customBookmarks}">
+                        <ul class="bookmark-list">
+
+                            <p:dataList value="#{bookmarkBackingBean.customBookmarks}"
+                                        var="bookmark"
+                                        id="bookmarks"
+                                        paginator="true"
+                                        paginatorAlwaysVisible="false"
+                                        rows="#{bookmarkBackingBean.paginatorRows}"
+                                        pageLinks="#{bookmarkBackingBean.paginatorPageLinks}"
+                                        paginatorTemplate=" #{bookmarkBackingBean.paginatorFirstPageLink} {PageLinks} #{bookmarkBackingBean.paginatorLastPageLink} "
+                                        type="none"
+                                        paginatorPosition="bottom"
+                                        rowIndexVar="rowIndex">
+
+                                <li class="bookmark-item bookmark-item-minimized">
+
+                                    <div class="bookmark-title-wrap clearfix">
+                                        <div class="ellipsis-margin">
+                                            <a class="bookmark-title-toggle" href="#">Toggle </a>
+                                            <a  class="bookmark-ellipsis" href="#{bookmark.url}" target="_BLANK">#{bookmark.title}</a>
+                                        </div></div>
+
+                                    <div class="bookmark-more-info">
+                                        <div class="bookmark-controls clearfix">
+
+                                            <!--Edit Bookmark button-->
+                                            <p:commandLink styleClass="bookmark-edit" action="#{bookmarkBackingBean.editBookmark}"
+                                                           title="Redigera" update=":bookmark_panel" value="Redigera" ajax="true" async="true">
+                                                <f:setPropertyActionListener value="#{bookmark.id}"
+                                                                             target="#{bookmarkBackingBean.bookmarkId}"/>
+                                            </p:commandLink>
+
+                                            <!--Delete Bookmark button-->
+                                            <p:commandLink title="Ta bort" value="Ta bort"
+                                                           styleClass="bookmark-delete" onclick="delete_dialog.show()" actionListener="#{bookmarkBackingBean.setBookmarkId(bookmark.id)}">
+                                            </p:commandLink>
+
+                                        </div>
+
+                                        <h:panelGroup rendered="#{fn:length(bookmark.title) ge 22}">
+                                            <p class="break-line">#{bookmark.title}</p>
+                                        </h:panelGroup>
+                                        <p class="break-line">#{bookmark.url}</p>
+                                        <p style="word-wrap:break-word;max-width: 500px">#{bookmark.description}</p>
+                                    </div>
+                                </li>
+                            </p:dataList>
+
+                        </ul>
+                    </h:panelGroup>
+
+                    <!-- Shows if the list is empty -->
+                    <h:panelGroup rendered="#{empty bookmarkBackingBean.customBookmarks}">
+                        <p>Du har inte lagt till n&#229;gra egna bokm&#228;rken &#228;nnu.</p>
+                    </h:panelGroup>
+
+            </h:panelGrid>
+            </div>
+        </div>
+        <!--END: User's custom Bookmark link list-->
+
+    </h:form>
+
+</ui:composition>

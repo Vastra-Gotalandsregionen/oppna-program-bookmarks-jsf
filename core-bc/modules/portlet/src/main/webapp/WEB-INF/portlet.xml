@@ -13,22 +13,12 @@
 
         <init-param>
             <name>javax.portlet.faces.defaultViewId.view</name>
-            <value>/WEB-INF/xhtmls/view.xhtml</value>
-        </init-param>
-        <init-param>
-            <name>javax.portlet.faces.defaultViewId.edit</name>
-            <value>/WEB-INF/xhtmls/edit.xhtml</value>
-        </init-param>
-        <init-param>
-            <name>javax.portlet.faces.defaultViewId.help</name>
-            <value>/WEB-INF/xhtmls/help.xhtml</value>
+            <value>/WEB-INF/xhtmls/rp/view.xhtml</value>
         </init-param>
 
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>VIEW</portlet-mode>
-            <portlet-mode>HELP</portlet-mode>
-            <portlet-mode>EDIT</portlet-mode>
         </supports>
 
         <supported-locale>en</supported-locale>
@@ -39,5 +29,31 @@
             <keywords>UserBookmarksJsf</keywords>
         </portlet-info>
     </portlet>
+
+    <portlet>
+        <description>intrabookmarks</description>
+        <portlet-name>intrabookmarks</portlet-name>
+        <display-name>Intra Bookmarks</display-name>
+        <portlet-class>com.liferay.faces.bridge.GenericLiferayFacesPortlet</portlet-class>
+
+        <init-param>
+            <name>javax.portlet.faces.defaultViewId.view</name>
+            <value>/WEB-INF/xhtmls/intra/view.xhtml</value>
+        </init-param>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+        </supports>
+
+        <supported-locale>en</supported-locale>
+
+        <portlet-info>
+            <title>intrabookmarks</title>
+            <short-title>intrabookmarks</short-title>
+            <keywords>intrabookmarks</keywords>
+        </portlet-info>
+    </portlet>
+
 
 </portlet-app>

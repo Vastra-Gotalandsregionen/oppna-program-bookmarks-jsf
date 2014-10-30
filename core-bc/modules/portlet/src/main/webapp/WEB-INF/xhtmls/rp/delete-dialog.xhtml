@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <p:confirmDialog appendToBody="true"
+                     closable="true"
+                     message="&#196;r du s&#228;ker p&#229; att du vill ta bort detta bokm&#228;rke?"
+                     showEffect="fade"
+                     hideEffect="fade"
+                     severity="alert"
+                     widgetVar="delete_dialog">
+        <h:form>
+            <div class="confirm-dialog-buttons">
+            <p:commandLink styleClass="confirm-dialog-button" ajax="true" async="true" value="Avbryt" onclick="delete_dialog.hide();" type="button"/>
+
+            <p:commandLink styleClass="confirm-dialog-button" value="Ja" ajax="true" async="true" actionListener="#{bookmarkBackingBean.deleteBookmark()}"
+                           oncomplete="delete_dialog.hide();" update=":bookmark_panel">
+            </p:commandLink>
+            </div>
+        </h:form>
+
+    </p:confirmDialog>
+
+</ui:composition>
