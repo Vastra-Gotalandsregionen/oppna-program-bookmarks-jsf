@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
 <ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:h="http://java.sun.com/jsf/html" xmlns:aui="http://liferay.com/faces/aui"
-                xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+  xmlns:h="http://java.sun.com/jsf/html" xmlns:aui="http://liferay.com/faces/aui"
+  xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
 
-    <h:form  id="add_bookmark">
+    <h:form  id="add_bookmark" styleClass="add-bookmark-form">
         <div class="vgr-error-msg "><p:messages  id="messages" autoUpdate="true" closable="true" /></div>
 
         <br></br>
@@ -29,10 +29,10 @@
         <!-- BEGIN: Save or Cancel buttons-->
         <aui:button-row >
             <div class="right">
-                <p:commandLink immediate="true"  styleClass="rp-link-button rp-link-button-alt" actionListener="#{bookmarkBackingBean.editBookmarkStateFalse}"
+                <p:commandLink immediate="true"  styleClass="link-button link-button-secondary" actionListener="#{bookmarkBackingBean.editBookmarkStateFalse}"
                                value="Avbryt" ajax="true" async="true" update=":bookmark_panel" title="Avbryt och gå tillbaka till bokmärkeslistan"/>
 
-                <p:commandLink style="margin-right: 0px" styleClass="rp-link-button rp-link-button-alt" value="Spara" update=":bookmark_panel"
+                <p:commandLink style="margin-right: 0px" styleClass="link-button link-button-primary" value="Spara" update=":bookmark_panel"
                                actionListener="#{bookmarkBackingBean.checkIfUrlExists}" ajax="true" async="true" title="Spara bokmärket och gå tillbaka till bokmärkeslistan"/>
             </div>
         </aui:button-row>

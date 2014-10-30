@@ -9,26 +9,25 @@
 
     <h:head></h:head>
 
-    <div  class="vgr-boxed-content rp-user-bookmarks" style="max-width: 584px">
-        <div class="hd"> <span>Mina bokm&#228;rken</span></div>
-        <div class="bd">
+    <div  class="bookmarks-wrap">
 
-            <!--Navigation between bookmark-list view and edit-bookmark view
-            depending on if editBookmarkState in BookmarkBackingBean is true or false -->
-            <p:panel id="bookmark_panel" style="padding: 0px">
+      <h2 class="portlet-inner-title">
+          Favoriter
+      </h2>
+      
+      <!--Navigation between bookmark-list view and edit-bookmark view
+      depending on if editBookmarkState in BookmarkBackingBean is true or false -->
+      <p:panel id="bookmark_panel">
 
-                <p:panel rendered="#{not bookmarkBackingBean.editBookmarkState}">
-                    <ui:include src="bookmark-list.xhtml"/>
-                </p:panel>
+          <p:panel rendered="#{not bookmarkBackingBean.editBookmarkState}">
+              <ui:include src="bookmark-list.xhtml"/>
+          </p:panel>
 
-                <p:panel rendered="#{bookmarkBackingBean.editBookmarkState}">
-                    <ui:include src="edit-bookmark.xhtml"/>
-                </p:panel>
-            </p:panel>
-            <ui:include src="delete-dialog.xhtml"/></div>
-
-
-    </div>
+          <p:panel rendered="#{bookmarkBackingBean.editBookmarkState}">
+              <ui:include src="edit-bookmark.xhtml"/>
+          </p:panel>
+      </p:panel>
+      <ui:include src="delete-dialog.xhtml"/></div>
 
     <!-- Alloy component used for toggle function in bookmark-list.xhtml -->
     <script type="text/javascript"
