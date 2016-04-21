@@ -14,36 +14,36 @@ import org.mockito.Mockito;
 import se.vgregion.dao.domain.patterns.repository.db.jpa.AbstractJpaRepository;
 
 public class JpaBookmarkRepositoryImplTest {
-	
+
 	long bookmarkId_1;
 	long companyId_1;
 	long groupId_1;
-	long userId_1;
-	
+	String screenName;
+
 	EntityManager entityManager;
 	JpaBookmarkRepositoryImpl jpaBookmarkRepositoryImpl;
 	Query query;
-	
+
 	@Before
 	public void setup() throws SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
-		
+
 		bookmarkId_1 = 3333;
 		companyId_1 = 1234;
 		groupId_1 = 5678;
-		userId_1 = 2222;
-		
-		entityManager = Mockito.mock(EntityManager.class);	
+		screenName = "screenName1";
+
+		entityManager = Mockito.mock(EntityManager.class);
 		jpaBookmarkRepositoryImpl = new JpaBookmarkRepositoryImpl();
-		
+
 		query = Mockito.mock(Query.class);
-		
+
 		Mockito.when(query.getSingleResult()).thenReturn(0);
-		
+
 		Field entityManagerField = AbstractJpaRepository.class.getDeclaredField("entityManager");
 		entityManagerField.setAccessible(true);
-		
+
 		entityManagerField.set(jpaBookmarkRepositoryImpl, entityManager);
-		
+
 		Mockito.when(entityManager.createQuery(Mockito.anyString())).thenReturn(query);
 	}
 
@@ -79,17 +79,17 @@ public class JpaBookmarkRepositoryImplTest {
 
 	@Test
 	public void testFindUserBookmarksCount() {
-		jpaBookmarkRepositoryImpl.findUserBookmarksCount(companyId_1, groupId_1, userId_1);
+		jpaBookmarkRepositoryImpl.findUserBookmarksCount(companyId_1, groupId_1, screenName);
 	}
 
 	@Test
 	public void testFindUserBookmarksLongLongLong() {
-		jpaBookmarkRepositoryImpl.findUserBookmarks(companyId_1, groupId_1, userId_1);
+		jpaBookmarkRepositoryImpl.findUserBookmarks(companyId_1, groupId_1, screenName);
 	}
 
 	@Test
 	public void testFindUserBookmarksLongLongLongIntInt() {
-		jpaBookmarkRepositoryImpl.findUserBookmarks(companyId_1, groupId_1, userId_1, 0, 10);
+		jpaBookmarkRepositoryImpl.findUserBookmarks(companyId_1, groupId_1, screenName, 0, 10);
 	}
 
 	@Test
@@ -97,5 +97,5 @@ public class JpaBookmarkRepositoryImplTest {
 		jpaBookmarkRepositoryImpl.remove(bookmarkId_1);
 	}
 
-	
+
 }

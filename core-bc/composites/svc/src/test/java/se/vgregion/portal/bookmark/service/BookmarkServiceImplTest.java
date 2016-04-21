@@ -1,7 +1,5 @@
 package se.vgregion.portal.bookmark.service;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -12,50 +10,50 @@ import se.vgregion.portal.bookmark.exception.UpdateBookmarkException;
 import se.vgregion.portal.bookmark.repository.BookmarkRepository;
 
 public class BookmarkServiceImplTest {
-	
+
 	BookmarkServiceImpl bookmarkServiceImpl;
 	Bookmark bookmark_new;
 	Bookmark bookmark_1;
-	
+
 	long bookmarkId_1;
 	long companyId;
 	long groupId;
-	long userId;
-	
+	String screenName;
+
 	@Before
 	public void setup() {
-	
+
 		BookmarkRepository bookmarkRepository = Mockito.mock(BookmarkRepository.class);
-		
+
 		bookmarkServiceImpl = new BookmarkServiceImpl(bookmarkRepository){
-			@Override 
-			protected String[] getIntraUris(long companyId, long userId) {
+			@Override
+			protected String[] getIntraUris(long companyId, String screenName) {
 				return new String[0];
 			}
 		};
-		
+
 		bookmark_new = new Bookmark();
-		
+
 		bookmarkId_1 = 1111;
 		groupId = 2222;
 		companyId = 3333;
-		userId = 4444;
-		
+		screenName = "screenName1";
+
 		bookmark_1 = new Bookmark();
 		bookmark_1.setId(bookmarkId_1);
-		
+
 		Mockito.when(bookmarkRepository.find(bookmarkId_1)).thenReturn(bookmark_1);
 	}
 
 	@Test
 	public void testAddBookmark() throws CreateBookmarkException {
-		
+
 		bookmarkServiceImpl.addBookmark(bookmark_new);
 	}
 
 	@Test
 	public void testDeleteBookmarkLong() {
-		
+
 		bookmarkServiceImpl.deleteBookmark(bookmarkId_1);
 	}
 
@@ -96,28 +94,28 @@ public class BookmarkServiceImplTest {
 
 	@Test
 	public void testFindUserBookmarksCount() {
-		bookmarkServiceImpl.findUserBookmarks(companyId, groupId, userId);
+		bookmarkServiceImpl.findUserBookmarks(companyId, screenName, groupId);
 	}
 
 	@Test
 	public void testFindUserBookmarksLongLongLong() {
-		bookmarkServiceImpl.findUserBookmarks(companyId, groupId, userId);
+		bookmarkServiceImpl.findUserBookmarks(companyId, screenName, groupId);
 	}
 
 	@Test
 	public void testFindUserBookmarksLongLongLongIntInt() {
-		bookmarkServiceImpl.findUserBookmarks(companyId, groupId, userId, 0, 10);
+		bookmarkServiceImpl.findUserBookmarks(companyId, groupId, screenName, 0, 10);
 	}
 
 	@Test
 	public void testFindVgrBookmarksForUser() {
-		bookmarkServiceImpl.findVgrBookmarksForUser(companyId, userId);
+		bookmarkServiceImpl.findVgrBookmarksForUser(companyId, screenName);
 	}
 
 	@Test
 	public void testUpdateBookmarkBookmark() throws UpdateBookmarkException {
 		bookmarkServiceImpl.updateBookmark(bookmark_new);
-		
+
 		bookmarkServiceImpl.updateBookmark(bookmark_1);
 	}
 

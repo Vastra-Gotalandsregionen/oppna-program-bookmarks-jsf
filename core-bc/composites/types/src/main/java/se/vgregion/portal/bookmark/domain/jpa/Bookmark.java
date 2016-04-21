@@ -38,8 +38,8 @@ public class Bookmark extends AbstractEntity<Long> implements Serializable {
     @Column(name = "group_id")
     private long groupId;
 
-    @Column(name = "user_id")
-    private long userId;
+    @Column(name = "screen_name")
+    private String screenName;
 
     @Column(name = "title")
     private String title;
@@ -57,16 +57,16 @@ public class Bookmark extends AbstractEntity<Long> implements Serializable {
     public Bookmark() {
     }
 
-    public Bookmark(long companyId, long groupId, long userId) {
+    public Bookmark(long companyId, long groupId, String screenName) {
         this.companyId = companyId;
         this.groupId = groupId;
-        this.userId = userId;
+        this.screenName = screenName;
     }
 
-    public Bookmark(long companyId, long groupId, long userId, String title, String url, String description) {
+    public Bookmark(long companyId, long groupId, String screenName, String title, String url, String description) {
         this.companyId = companyId;
         this.groupId = groupId;
-        this.userId = userId;
+        this.screenName = screenName;
         this.title = title;
         this.url = url;
         this.description = description;
@@ -97,12 +97,12 @@ public class Bookmark extends AbstractEntity<Long> implements Serializable {
         this.groupId = groupId;
     }
 
-    public long getUserId() {
-        return userId;
+    public String getScreenName() {
+        return screenName;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setScreenName(String screenName) {
+        this.screenName = screenName;
     }
 
     public String getTitle() {

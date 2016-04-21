@@ -213,7 +213,7 @@ public class BookmarkBackingBeanTest {
     public void testEditBookmarkWithParameter() throws Exception {
         // Given
         bookmarkBackingBean.setBookmarkId(10);
-        Bookmark bookmark = new Bookmark(1, 1, 1, "Title", "www.url.se", "My url description.");
+        Bookmark bookmark = new Bookmark(1, 1, "screenName", "Title", "www.url.se", "My url description.");
         bookmark.setId(Long.valueOf(1));
 
         // When

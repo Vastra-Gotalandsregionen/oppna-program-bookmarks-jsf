@@ -33,8 +33,8 @@ public class BookmarkBackingBean implements Serializable {
 
     protected long bookmarkId;
     private long companyId;
-    private long userId;
     private long scopeGroupId;
+    private String screenName;
 
     //For navigation purposes.
     private boolean editBookmarkState = false;
@@ -68,7 +68,7 @@ public class BookmarkBackingBean implements Serializable {
         ThemeDisplay themeDisplay = (ThemeDisplay) portletRequest.getAttribute(WebKeys.THEME_DISPLAY);
 
         companyId = themeDisplay.getCompanyId();
-        userId = themeDisplay.getUserId();
+        screenName = themeDisplay.getUser().getScreenName();
         scopeGroupId = themeDisplay.getScopeGroupId();
 
     }
@@ -81,7 +81,7 @@ public class BookmarkBackingBean implements Serializable {
     public List<Bookmark> getVgrBookmarks() {
         getThemeDisplayIds();
         try {
-            vgrBookmarks = bookmarkService.findVgrBookmarksForUser(companyId, userId);
+            vgrBookmarks = bookmarkService.findVgrBookmarksForUser(companyId, screenName);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -96,7 +96,7 @@ public class BookmarkBackingBean implements Serializable {
      */
     public List<Bookmark> getCustomBookmarks() {
         getThemeDisplayIds();
-        customBookmarks = bookmarkService.findUserBookmarks(companyId, scopeGroupId, userId);
+        customBookmarks = bookmarkService.findUserBookmarks(companyId, screenName, scopeGroupId);
 
         return customBookmarks;
     }
@@ -178,7 +178,7 @@ public class BookmarkBackingBean implements Serializable {
 
         if (bookmarkModelBean.getId() == 0) {
 
-            Bookmark newBookmark = new Bookmark(companyId, scopeGroupId, userId, title, url,
+            Bookmark newBookmark = new Bookmark(companyId, scopeGroupId, screenName, title, url,
                     bookmarkModelBean.getDescription());
             try {
                 bookmarkService.addBookmark(newBookmark);
